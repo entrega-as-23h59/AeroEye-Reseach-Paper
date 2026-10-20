@@ -34,8 +34,6 @@ Identify where and when you searched, the main search terms and the criteria use
 \section{State of the Art}
 A integração de Veículos Aéreos Não Tripulados (UAVs) e sistemas autónomos tem vindo a intensificar-se com a transição da Indústria 4.0 para a Indústria 5.0, onde a colaboração homem-máquina e a automação sustentável assumem um papel central. Esta evolução tem impulsionado investigações relevantes focadas na aplicação de robótica aérea em ambientes operacionais complexos. Como tal, a presente secção dedica-se a contextualizar o estado da arte e a literatura científica existente em torno desta temática.
 
-% sensores usados e indoor/outdoor (IOT - C), como a VR é usada nas diferentes abordagens (D - E)
-
 \subsection{Evolução Bibliométrica e Crescimento do Interesse Científico}
 O estudo, desenvolvimento e implementação de drones em ambientes fabris e industriais registaram um crescimento notável nos últimos anos. De acordo com o levantamento bibliométrico conduzido por Mourtzis et al. \cite{Mourtzis02052024}, realizado em novembro de 2022 nas bases de dados \textit{Scopus}, \textit{Google Scholar} e \textit{Web of Science}, foram identificados 329 artigos científicos dedicados à temática. Uma análise de coocorrência de termos com recurso ao software \textit{VOSviewer} revelou que expressões como \textit{drones}, \textit{path planning} e \textit{antennas} figuram entre os principais focos de investigação.
 
@@ -89,6 +87,19 @@ Apesar destas semelhanças, existem diferenças significativas entre as duas abo
 Desta forma, ambos os sistemas partilham o princípio de utilizar múltiplas fontes de informação para melhorar a monitorização dos equipamentos, mas diferem na complexidade da arquitetura e nas técnicas utilizadas para analisar cada tipo de dado. No presente projeto, a temperatura é avaliada através de regras definidas para cada máquina, enquanto a informação visual e acústica é utilizada como fontes adicionais para a deteção de possíveis anomalias.
 
 \subsection{Realidade Virtual e Aumentada na monitorização industrial}
+A Realidade Aumentada e a Realidade Virtual têm vindo a ser exploradas em contextos industriais para apoiar a interpretação de informação operacional, a manutenção de equipamentos e a colaboração entre trabalhadores. Embora ambas permitam novas formas de interação com informação digital, apresentam características distintas: a AR sobrepõe elementos virtuais ao ambiente físico, enquanto a VR proporciona um ambiente virtual imersivo. A escolha entre estas tecnologias depende, por isso, da tarefa a realizar e do contexto em que o utilizador necessita de aceder à informação. 
+
+\subsubsection{Comparação com soluções existentes}
+A integração de Realidade Aumentada (AR) e Realidade Virtual (VR) tem vindo a ser explorada em sistemas de inspeção e manutenção industrial, permitindo desenvolver novas formas de interação com equipamentos e de colaboração remota.
+
+Mourtzis et al. \cite{Mourtzis02052024} estudam a utilização de AR no planeamento e controlo de drones em ambientes industriais. Esta abordagem demonstra a aplicação da realidade aumentada na interação com veículos aéreos não tripulados, apresentando semelhanças com a componente de controlo remoto proposta para o AeroEye. No entanto, o projeto distingue-se pela utilização de VR para a supervisão remota e de AR para disponibilizar informação contextual aos técnicos no local.
+
+Xu et al. \cite{11355682} desenvolveram um sistema de colaboração remota que combina um drone, uma interface VR para o utilizador remoto e uma interface de realidade mista para o utilizador no local. Os resultados experimentais demonstraram melhorias na eficiência da colaboração e na perceção espacial, embora também tenha sido identificado um aumento da carga de trabalho dos operadores remotos. Esta abordagem apresenta semelhanças com o AeroEye, que pretende integrar a observação remota através de um drone como apoio aos operadores no terreno.
+
+Por sua vez, Costa et al. \cite{repec:gam:jftint:v:18:y:2026:i:6:p:330-:d:1969785} desenvolveram o sistema RiDTwin para a indústria têxtil, combinando VR, AR móvel e uma interface web para apoiar os operadores e os processos de manutenção. A solução permite relacionar interfaces imersivas com informação operacional dos equipamentos, aproximando-se da arquitetura proposta para o AeroEye. A principal diferença reside na utilização de um drone para recolher informação durante a monitorização dos equipamentos.
+
+As abordagens analisadas demonstram a aplicação de AR e VR na inspeção, na manutenção e na colaboração remota em ambientes industriais. Neste contexto, o AeroEye procura integrar estas tecnologias com a monitorização por drone, disponibilizando informação relevante para o acompanhamento e diagnóstico de possíveis anomalias. A viabilidade desta integração e os seus benefícios para os utilizadores terão de ser avaliados através de testes práticos.
+
 \subsection{Integração de IoT com VR e AR}
 
 
@@ -147,13 +158,13 @@ Para apresentar os relatórios de inspeção, dados recolhidos pelo drone e esta
 \subsection{Solução e Arquitetura Conceitual}
 A solução proposta destina-se a gestores e responsáveis de manutenção em ambiente industrial. A ideia consiste em utilizar um drone, que realiza rondas regulares pelo interior de uma fábrica e verifica o estado das máquinas. O objetivo principal é detetar anomalias o mais cedo possível, tirando partido da recolha de dados de múltiplos sensores (câmara, temperatura e ruído) e de uma interface imersiva dupla, combinando realidade virtual para o controlo remoto do drone e a realidade aumentada para o apoio técnico no terreno. O âmbito do sistema foca-se exclusivamente na monitorização e diagnóstico de anomalias no interior das instalações, deixando de fora qualquer tipo de reparação física. \\
 
-No âmbito da unidade curricular Tecnologias Emergentes e Inteligentes, o sistema foca-se na recolha e transmissão contínua de dados dos sensores presentes no drone, enviando os mesmos para um servidor central através de uma API, posteriormente seguindo para uma textit{dashboard} central que disponibiliza a lista de máquinas, o respetivo estado atual, as características técnicas, o histórico de avarias e estatísticas de anomalias na fábrica. \\
+No âmbito da unidade curricular Tecnologias Emergentes e Inteligentes, o sistema foca-se na recolha e transmissão contínua de dados dos sensores presentes no drone, enviando os mesmos para um servidor central através de uma API, posteriormente seguindo para uma \textit{dashboard} central que disponibiliza a lista de máquinas, o respetivo estado atual, as características técnicas, o histórico de avarias e as estatísticas de anomalias na fábrica. \\
 
 No que diz respeito à unidade curricular Realidade Virtual e Aumentada, a arquitetura integra duas vertentes complementares: um operador remoto pode pilotar o drone utilizando óculos de realidade virtual e registar anotações digitais sobre a resolução da anomalia em questão e, posteriormente, um técnico no terreno aproxima-se da máquina com um telemóvel com realidade aumentada, visualiza as instruções deixadas pelo especialista e executa a intervenção tendo em conta as mesmas. \\
 
-Referente aos componentes principais, a solução é constituída pelo drone (equipado com sensores e um dispositivo de processamento complementar), pela textit{dashboard} central de monitorização, pelos óculos VR e pelo smartphone com suporte a AR, apoiados por um servidor. A comunicação e as interfaces de integração baseiam-se em protocolos de rede sem fios para a transmissão em tempo real, fluxo de vídeo e dados analíticos. O sistema incorpora um mecanismo de resiliência a falhas de rede, em que os dados são armazenados localmente no drone, para posterior sincronização assim que a conectividade for restabelecida. \\
+Referente aos componentes principais, a solução é constituída pelo drone (equipado com sensores e um dispositivo de processamento complementar), pela \textit{dashboard} central de monitorização, pelos óculos VR e pelo smartphone com suporte a AR, apoiados por um servidor central. A comunicação e as interfaces de integração baseiam-se em protocolos de rede sem fios para a transmissão em tempo real, fluxo de vídeo e dados analíticos. O sistema possui um mecanismo de resiliência a falhas de rede, em que os dados são armazenados localmente no drone, para posterior sincronização assim que a conectividade for restabelecida. \\
 
-Por fim, a Figura~\ref{fig:solution_architecture} ilustra o diagrama de arquitetura global da solução, evidenciando a integração direta entre a interface imersiva, os serviços de processamento e as respetivas fontes de dados. \\
+Por fim, a Figura~\ref{fig:solution_architecture} ilustra o diagrama de arquitetura global da solução, apresentando a integração direta entre a interface imersiva, os serviços de processamento e as respetivas fontes de dados. \\
 
 \begin{figure*}[!t]
     \centering
@@ -164,11 +175,11 @@ Por fim, a Figura~\ref{fig:solution_architecture} ilustra o diagrama de arquitet
 
 A Figura~\ref{fig:solution_architecture} apresenta a arquitetura da solução, integrando os utilizadores, as interfaces imersivas, a camada de serviços e as fontes de dados. O diagrama indica o caminho dos fluxos de informação entre cada bloco, os pontos onde o processamento é executado e a divisão entre as unidades curriculares de Tecnologias Emergentes e Inteligentes e Realidade Virtual e Aumentada.\\
 
-\textbf{Fluxos de Dados e Níveis de processamento}
+\textbf{Fluxos de Dados e Níveis de processamento}\\
 As setas bidirecionais demonstram a comunicação contínua entre os diferentes blocos:
 \begin{itemize}
-    \item \textbf{User and Task $\leftrightarrow$ VR/AR Interface / textit{Dashboard}:} O operador remoto realiza \textit{actions} (comandos de voo e interações) utilizando a interface VR, enquanto o técnico no terreno visualiza as instruções de apoio em AR. Paralelamente, os utilizadores enviam requests para a textit{dashboard} para consultar informações.
-    \item \textbf{textit{Dashboard} $\leftrightarrow$ Service Layer:} A \textit{Dashboard} realiza \textit{requests} ao servidor para obter e apresentar a informação.
+    \item \textbf{User and Task $\leftrightarrow$ VR/AR Interface / \textit{Dashboard}:} O operador remoto realiza \textit{actions} (comandos de voo e interações) utilizando a interface VR, enquanto o técnico no terreno visualiza as instruções de apoio em AR. Paralelamente, os utilizadores enviam requests para a \textit{dashboard} para consultar informações.
+    \item \textbf{\textit{Dashboard} $\leftrightarrow$ Service Layer:} A \textit{Dashboard} realiza \textit{requests} ao servidor para obter e apresentar a informação.
     \item \textbf{VR/AR Interface $\leftrightarrow$ Service Layer:} As aplicações de VR e AR enviam pedidos constantes à API REST para carregar o vídeo e os dados em tempo real, respetivamente.
     \item \textbf{Service Layer $\leftrightarrow$ Data Sources:} O Servidor Central utiliza a API REST para enviar comandos ao dispositivo complementar do drone, enquanto este envia de volta o vídeo, os valores de temperatura e de ruído, que o servidor guarda na base de dados para atualizar o histórico.
 \end{itemize}
@@ -177,49 +188,24 @@ As setas bidirecionais demonstram a comunicação contínua entre os diferentes 
 \begin{itemize}
     \item \textbf{Equipamento:} Drone autónomo equipado com câmara, sensor térmico e microfone, óculos de Realidade Virtual, \textit{smartphones} compatíveis com AR e servidor central(API REST e base de dados para histórico).
     \item \textbf{Software:} Unity para a aplicação VR, Kotlin com ARCore para a interface AR e Laravel com Vue.js para gerir a API REST e a \textit{Dashboard}.
-    \item \textbf{Dados e Serviços:} Utilização de \textit{WI-FI} 5 para comunicação entre o servidor central, o drone e os óculos VR e a aplicação AR. O servidor central encontra-se ligado por cabo Ethernet, sendo complementado por um serviço de base de dados para garantir a integridade do histórico. 
+    \item \textbf{Dados e Serviços:} Utilização de \textit{WI-FI} 5 para comunicação entre o servidor central, o drone, os óculos VR e a aplicação AR. O servidor central encontra-se ligado por cabo Ethernet, sendo complementado por um serviço de base de dados para garantir a integridade do histórico. 
 \end{itemize}
-
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -------------- Cenas á ruben ------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
-% -----------------------------------------------------
 
 \textbf{Plano Preliminar de Desenvolvimento}
 \begin{enumerate}
-    \item \textbf{Requisitos e Arquitetura:} Desenho do esquema da base de dados, mapeamento de \textit{endpoints} da API e aquisição de equipamentos.
-  % tipo em esoft de dizer, drone -> enconrtea anomalia -> envia para o server -> envia ao telemovel. Telemovel em modo controlo -> server -> drone -> cenas
-    \item \textbf{Infraestrutura Central:} Desenvolvimento da \textit{Service Layer} (servidor e API REST) e implementação da \textit{Dashboard}.
-    \item \textbf{Integração de Edge:} Configuração computacional no drone, calibração dos três sensores (câmara, térmico, microfone) e estabelecimento da comunicação com o servidor.
-    \item \textbf{Prototipagem Imersiva:} Desenvolvimento e integração das aplicações clientes para os óculos VR (focada na pilotagem e anotação no ambiente) e para o \textit{smartphone} com AR (focada na visualização instruções técnicas).
-    \item \textbf{Validação Global:} Testes de carga e latência num ambiente industrial simulado para aferir a robustez da comunicação em tempo real. Testes para validar a persistência dos dados no ambiente virtual para realidade aumentada, verificando se as anotações permanecem na mesma posição e rotação. Testes para verificar a taxa de falsos positivos e falsos negativos nas deteções das anomalias realizadas pelo modelo. Testar a fiabilidade da recolha de dados pelos sensores do drone, nomeadamente o microfone e o sensor de temperatura.Adicionalmente, avaliar a facilidade de utilização dos diferentes componentes tecnológicos do sistema, incluindo a aplicação móvel, destinada ao controlo e à visualização do drone, os óculos de realidade virtual, utilizados para autenticação, controlo, visualização e criação de anotações, e a textit{dashboard}, tendo em conta a facilidade de navegação e de interpretação dos dados apresentados. Testar a fiabilidade da recolha de dados pelos sensores do drone, nomeadamente o microfone e o sensor de temperatura.
+    \item \textbf{Requisitos e Arquitetura:} Definição dos requisitos funcionais e da arquitetura do sistema, incluindo o desenho da base de dados, o mapeamento dos \textit{endpoints} da API e a definição dos fluxos de comunicação. Será estabelecido o fluxo de dados entre o drone, o servidor e as aplicações cliente, nomeadamente a transmissão dos dados recolhidos pelo drone para o servidor e, posteriormente, para a \textit{dashboard} e aplicações de visualização. Será também definido o fluxo de controlo inverso, através do qual os comandos enviados pelo operador são encaminhados pelo servidor para o drone.
+
+    \item \textbf{Infraestrutura Central:} Desenvolvimento da \textit{Service Layer}, incluindo o servidor e a API REST, responsável pela comunicação entre os diferentes componentes, gestão da telemetria e persistência dos dados. Implementação da \textit{dashboard} para consulta do estado das máquinas, histórico de anomalias e restantes dados recolhidos.
+
+    \item \textbf{Integração de Edge:} Configuração do processamento no drone, integração e calibração dos três sensores (câmara, sensor de temperatura e microfone) e estabelecimento da comunicação com o servidor. Implementação dos mecanismos necessários para a recolha, processamento inicial e transmissão dos dados dos sensores.
+
+    \item \textbf{Prototipagem Imersiva:} Desenvolvimento e integração das aplicações cliente para os óculos de VR e para o \textit{smartphone} com AR. A aplicação VR será orientada para a supervisão e controlo remoto do drone, incluindo a visualização do \textit{stream} de vídeo e a criação de anotações. A aplicação AR será destinada ao técnico no local, permitindo visualizar as instruções e informações associadas às anomalias identificadas deixadas pelo técnico em VR.
+
+    \item \textbf{Validação Global:} Realização de testes num ambiente industrial simulado para avaliar o funcionamento integrado do sistema. Serão avaliadas a robustez e latência da comunicação entre o drone, o servidor e as aplicações cliente, a fiabilidade da recolha de dados pelos sensores e a capacidade do sistema para detetar anomalias. Serão também realizados testes à deteção de anomalias, considerando falsos positivos e falsos negativos, bem como à persistência e correta localização das anotações em AR. Por fim, será avaliada a facilidade de utilização da aplicação VR, da aplicação AR e da \textit{dashboard}, considerando a navegação, o controlo do drone e a interpretação da informação apresentada.
 \end{enumerate}
 
 \textbf{Escolhas Tecnológicas Provisórias}
-Nesta fase inicial do projeto, algumas tecnologias e componentes continuam em avaliação. Deste modo, o dispositivo móvel para Realidade Aumentada, o dispositivo complementar do drone, a marca dos sensores, a tecnologia específica para a base de dados e o local de alojamento (\textit{host}) do servidor central permanecem em aberto. A consolidação destas escolhas depende da disposição dos materiais fornecidos pela universidade e de testes práticos de desempenho.
+Nesta fase inicial do projeto, algumas tecnologias e componentes continuam em avaliação. Deste modo, os \textit{smartphones} para Realidade Aumentada, o dispositivo complementar do drone, a marca dos sensores, a tecnologia específica para a base de dados e o local de alojamento (\textit{host}) do servidor central permanecem em aberto. A consolidação destas escolhas depende da disposição dos materiais fornecidos pela universidade e de testes práticos de desempenho.
 
 \subsection{Preliminary validation}
 Para validar o sistema proposto, planeia-se realizar testes baseados em três métricas principais:
@@ -229,7 +215,7 @@ Para validar o sistema proposto, planeia-se realizar testes baseados em três m�
     \begin{itemize}
         \item \textit{O que será avaliado:} A eficácia do sistema em identificar corretamente anomalias nos equipamentos inspecionados.
         \item \textit{Teste proposto:} Introdução de anomalias conhecidas no cenário de testes e verificação de quantas são detetadas e reportadas para o servidor central.
-        \item \textit{Recursos necessários:} Drone com algoritmo de \textit{machine learning}, fotografias impressas de anomalias posicionadas no cenário de teste e a textit{dashboard} para visualização e validação dos alertas apresentados.
+        \item \textit{Recursos necessários:} Drone com algoritmo de \textit{machine learning}, fotografias impressas de anomalias posicionadas no cenário de teste e a \textit{dashboard} para visualização e validação dos alertas apresentados.
         \item \textit{Critério de sucesso (Hipótese):} Estabelece-se como meta uma taxa de deteção de 80\% das anomalias colocadas  os testes.
     \end{itemize}
 
@@ -244,7 +230,7 @@ Para validar o sistema proposto, planeia-se realizar testes baseados em três m�
   \item \textbf{Média de tempo decorrido entre o momento em que a anomalia é detetada e o momento em que o problema é oficialmente marcado como resolvido:}
     \begin{itemize}
         \item \textit{O que será avaliado:} O tempo que passa desde o momento em que o sistema deteta uma anomalia até à intervenção do operador ou técnico e ao seu registo como resolvida.
-        \item \textit{Teste proposto:} O teste proposto consiste numa simulação no corredor da universidade em que o drone deteta a anomalia, o alerta surge na textit{dashboard}, o interveniente consulta a informação, resolve a anomalia e faz o registo, medindo o tempo no total.
+        \item \textit{Teste proposto:} O teste proposto consiste numa simulação no corredor da universidade em que o drone deteta a anomalia, o alerta surge na \textit{dashboard}, o interveniente consulta a informação, resolve a anomalia e faz o registo, medindo o tempo no total.
         \item \textit{Recursos necessários:} Drone com algoritmo de deteção e \textit{dashboard}.
         \item \textit{Critério de sucesso:} Estabelece-se como meta que o tempo médio entre a deteção automática e a alteração da anomalia para resolvida seja inferior a 30 minutos no cenário de teste.
     \end{itemize}
