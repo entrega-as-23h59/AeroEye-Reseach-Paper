@@ -1,3 +1,29 @@
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% ---------FALTA SUBSTITUIR KOTLIN POR IOS-------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
+% -----------------------------------------------------
 \RequirePackage[T1]{fontenc}
 \documentclass[conference,a4paper]{IEEEtran}
 \usepackage{graphicx}
@@ -24,12 +50,15 @@ Replace this paragraph with a 150--200-word abstract stating the problem, review
 state of the art; emerging technologies; virtual reality; augmented reality; project proposal
 \end{IEEEkeywords}
 \section{Introduction}
-Introduce the application domain, intended users and problem. Explain its relevance and what existing approaches do not adequately address. Define the review objectives and scope, and explain how the review supports the multidisciplinary project topic approved by the lecturers. Include only the background needed to understand subsequent comparisons and decisions.
-
-Explain how Emerging and Intelligent Technologies (EIT) and Virtual and Augmented Reality (VAR) contribute to the common problem. Justify the use of VR and/or AR for the intended task, considering a conventional alternative where relevant. Define essential terminology and abbreviations.
+O AeroEye foca-se na monitorização e manutenção industrial, tendo como utilizadores os gestores industriais, técnicos remotos e operadores no terreno. O problema principal consiste na necessidade de deslocação presencial de um técnico para analisar e resolver anomalias nas máquinas, resultando num diagnóstico dispendioso e demorado.\\
+O objetivo deste projeto é fundamentar uma arquitetura que integra drones e interfaces imersivas para resolver estas falhas. Esta abordagem responde aos objetivos no projeto multidisciplinar, integrando as Tecnologias Emergentes e Inteligentes (TEI), que tratam do processamento de dados e do servidor, com a Realidade Aumentada e Virtual (RVA), responsável por potenciar a supervisão remota e o apoio contextual no terreno através de interfaces imersivas. O âmbito foca-se na inspeção interna e no diagnóstico e tratamento de anomalias .\\
+A escolha de VR e AR substitui alternativas convencionais como documentação em papel e ecrãs convencionais, permitindo que o técnico remoto pilote o drone com óculos VR e que o operador veja instruções diretamente no local com um \textit{smartphone} AR, melhorando assim o tempo de resposta.\\
 
 \subsection{Scope and literature search}
-Identify where and when you searched, the main search terms and the criteria used to select material. State practical boundaries such as domain, device type or publication period. A short paragraph is sufficient; formal research questions, a systematic review protocol and a PRISMA diagram are not required. Acknowledge limitations.
+
+A pesquisa bibliográfica foi realizada recorrendo ao motor de pesquisa \textit{Google Scholar}. Os principais termos de pesquisa utilizados incluíram expressões como \textit{IoT}, \textit{Drone}, \textit{UAV}, \textit{AR}, \textit{VR}, \textit{sensors}, \textit{industry} e \textit{surveillance}. A seleção dos artigos teve em conta a sua relevância para a monitorização industrial, a recolha de dados através de veículos aéreos não tripulados e a aplicação de tecnologias de Realidade Aumentada e Virtual na inspeção e colaboração remota.
+
+Como principal limitação, destaca-se o tempo disponível para a realização da pesquisa e a análise aprofundada da literatura, o que condicionou a quantidade de artigos que foi possível analisar em detalhe.
 
 \section{State of the Art}
 A integração de Veículos Aéreos Não Tripulados (UAVs) e sistemas autónomos tem vindo a intensificar-se com a transição da Indústria 4.0 para a Indústria 5.0, onde a colaboração homem-máquina e a automação sustentável assumem um papel central. Esta evolução tem impulsionado investigações relevantes focadas na aplicação de robótica aérea em ambientes operacionais complexos. Como tal, a presente secção dedica-se a contextualizar o estado da arte e a literatura científica existente em torno desta temática.
@@ -37,7 +66,7 @@ A integração de Veículos Aéreos Não Tripulados (UAVs) e sistemas autónomos
 \subsection{Evolução Bibliométrica e Crescimento do Interesse Científico}
 O estudo, desenvolvimento e implementação de drones em ambientes fabris e industriais registaram um crescimento notável nos últimos anos. De acordo com o levantamento bibliométrico conduzido por Mourtzis et al. \cite{Mourtzis02052024}, realizado em novembro de 2022 nas bases de dados \textit{Scopus}, \textit{Google Scholar} e \textit{Web of Science}, foram identificados 329 artigos científicos dedicados à temática. Uma análise de coocorrência de termos com recurso ao software \textit{VOSviewer} revelou que expressões como \textit{drones}, \textit{path planning} e \textit{antennas} figuram entre os principais focos de investigação.
 
-Mais recentemente, uma consulta preliminar no \textit{Google Scholar}, utilizando o mesmo criterio de pesquisa, passou a retornar mais de 800 publicações indexadas, evidenciando uma tendência contínua de expansão da comunidade científica neste domínio e a premência de novas abordagens operacionais e algorítmicas.
+Mais recentemente, uma consulta preliminar no \textit{Google Scholar}, utilizando o mesmo critério de pesquisa, passou a retornar mais de 800 publicações indexadas, evidenciando uma tendência contínua de expansão da comunidade científica neste domínio e a premência de novas abordagens operacionais e algorítmicas.
 
 \subsection{Domínios de Aplicação dos UAVs}
 Atualmente, no contexto industrial, os veículos aéreos não tripulados (UAVs) podem ser empregados numa vasta gama de aplicações, incluindo a gestão de inventários, a otimização de armazéns e a logística de expedição e distribuição. Por exemplo, os UAVs são utilizados no reconhecimento aéreo de infraestruturas fabris para monitorizar níveis de stock, identificar potenciais estrangulamentos no processo produtivo e rastrear a movimentação de mercadorias ao longo da cadeia de abastecimento. Adicionalmente, estes sistemas viabilizam o transporte e a entrega autónoma de bens, reduzindo a necessidade de intervenção humana direta e aumentando a eficiência operacional global \cite{Mourtzis02052024}.
@@ -48,9 +77,9 @@ Para além do ambiente estritamente industrial, a literatura reporta a integraç
     \item \textbf{Agricultura:} Monitorização aérea com recurso a sensores multiespectrais para análise e mapeamento dos níveis de azoto na vegetação, otimizando a aplicação direcionada de fertilizantes e aumentando o rendimento das culturas \cite{agronomy12091992}.
     \item \textbf{Construção Civil:} Levantamentos topográficos e mapeamento 3D de estaleiros de obras, facilitando o pré-planeamento logístico, a gestão de riscos e a alocação eficiente de recursos \cite{rs12142329}.
     \item \textbf{Indústria Extrativa e Mineração:} Uso de tecnologia \textit{Light Detection and Ranging} (LiDAR) para gerar modelos topográficos de elevada fidelidade, viabilizando a deteção preventiva de zonas de instabilidade geológica e perigo de desabamento rochoso \cite{rs18091333}.
-    \item \textbf{Saúde:} Utilização de drones para monitorizar indicadores de saúde de pessoas com suspeita de infeção por COVID-19, nomeadamente através da medição da temperatura corporal e da análise da respiração.
-    \item \textbf{Guerra:} Usado para detetar inimigos e armadilhas, assim como ambientes com materiais tóxicos e prejudiciais ao ser humano
-    \item \textbf{Desastres:} Utilizado para localizar escombros e possiveis locais com sobreviventes.\cite{jsan14050098}
+    \item \textbf{Saúde:} Utilização de drones para monitorizar indicadores de saúde de pessoas com suspeita de infeção por COVID-19, nomeadamente através da medição da temperatura corporal e da análise da respiração \cite{jsan14050098}.
+    \item \textbf{Guerra:} Usado para detetar inimigos e armadilhas, assim como ambientes com materiais tóxicos e prejudiciais ao ser humano \cite{jsan14050098}.
+    \item \textbf{Desastres:} Utilizado para localizar escombros e possiveis locais com sobreviventes \cite{jsan14050098}.
 \end{itemize}
 
 
@@ -99,6 +128,42 @@ Xu et al. \cite{11355682} desenvolveram um sistema de colaboração remota que c
 Por sua vez, Costa et al. \cite{repec:gam:jftint:v:18:y:2026:i:6:p:330-:d:1969785} desenvolveram o sistema RiDTwin para a indústria têxtil, combinando VR, AR móvel e uma interface web para apoiar os operadores e os processos de manutenção. A solução permite relacionar interfaces imersivas com informação operacional dos equipamentos, aproximando-se da arquitetura proposta para o AeroEye. A principal diferença reside na utilização de um drone para recolher informação durante a monitorização dos equipamentos.
 
 As abordagens analisadas demonstram a aplicação de AR e VR na inspeção, na manutenção e na colaboração remota em ambientes industriais. Neste contexto, o AeroEye procura integrar estas tecnologias com a monitorização por drone, disponibilizando informação relevante para o acompanhamento e diagnóstico de possíveis anomalias. A viabilidade desta integração e os seus benefícios para os utilizadores terão de ser avaliados através de testes práticos.
+
+% QUEREM DEIXAR ESTA TABELA TB? 
+\begin{comment}
+\begin{table*}[!t]
+\caption{Matriz comparativa de soluções de monitorização industrial}
+\label{tab:comparacao_solucoes}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Dimensão} & \textbf{Dey et al. \cite{Dey2026}} & \textbf{Xu et al. \cite{11355682} / Costa et al. \cite{repec:gam:jftint:v:18:y:2026:i:6:p:330-:d:1969785}} & \textbf{Proposta AeroEye} \\ \hline
+\textbf{Análise Térmica} & Câmara Térmica Complexa (Mapas 2D) & N/A & \textbf{Sensor Térmico de Limiar Directo} \\ \hline
+\textbf{Análise Acústica} & Sensores Ultrassónicos Dedicados & N/A & \textbf{Microfone para Assinatura de Ruído} \\ \hline
+\textbf{Interface Remota} & Dashboards 2D Tradicionais & VR / Mixed Reality & \textbf{VR (Pilotagem + Anotações)} \\ \hline
+\textbf{Apoio no Terreno} & Sem suporte no local & AR Móvel em fábrica (RiDTwin) & \textbf{AR Smartphone (Instruções do Remoto)} \\ \hline
+\end{tabular}
+\end{table*}
+\end{comment}
+
+\begin{table*}[!t]
+\caption{Matriz comparativa da literatura analisada}
+\label{tab:comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{0.14\textwidth}|>{\raggedright\arraybackslash}p{0.20\textwidth}|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|}
+\hline
+\textbf{Study / source} & \textbf{Context and approach} & \textbf{Evidence to extract} & \textbf{Limitation to check} & \textbf{Decision informed} \\ \hline
+Mourtzis et al. \cite{Mourtzis02052024} & Planeamento e controlo de UAVs em fábrica assistido por AR & Mapeamento bibliométrico e interação AR com drones no terreno & Foco em AR no local, ausência de ambiente imersivo em VR & Validação do uso de AR para interação com UAVs em ambiente fabril \\ \hline
+Dey et al. \cite{Dey2026} & Inspeção industrial por drone com múltiplos sensores (visual, térmico, acústico) & Utilização de câmara, sensores térmicos e acústicos para mapeamento 2D e deteção de anomalias & Elevada complexidade de arquitetura e processamento espacial & Seleção de sensores mais simples (limiar térmico direto e microfone) \\ \hline
+Xu et al. \cite{11355682} / Costa et al. \cite{repec:gam:jftint:v:18:y:2026:i:6:p:330-:d:1969785} & Colaboração remota e manutenção imersiva (VR/MR e RiDTwin para têxtil) & Melhorias na eficiência da colaboração e na perceção espacial do operador & Aumento da carga de trabalho em VR, ausência de recolha por drone em RiDTwin & Integração de VR para controlo/anotação e AR móvel com apoio de drone \\ \hline
+\end{tabular}
+\end{table*}
 
 \begin{comment}
 
@@ -239,7 +304,10 @@ Discuss the feasibility of the proposal in light of the literature, available re
 Explain how the review strengthened or changed the proposal, which alternatives were rejected and when decisions might need revision. A justified application, adaptation, integration or evaluation of existing technologies can provide a contribution; distinguish it from unproven novelty.
 
 \section{Conclusions}
-Summarise the review findings, resulting decisions and expected contribution. Return to the initial objectives and identify the next development and validation steps. Do not introduce new evidence or claim results that have not been obtained.
+A revisão da literatura sobre UAVs, IIoT e Realidade Virtual e Aumentada na monitorização industrial permitiu fundamentar a proposta do AeroEye. Os trabalhos analisados evidenciam a utilização de drones na recolha de dados através de sensores, a influência da apresentação da informação na compreensão da situação pelos operadores e a aplicação de AR e VR em atividades de inspeção, manutenção e colaboração remota. \\
+Nos trabalhos analisados, nenhum combina numa mesma solução a monitorização por drone, a supervisão remota em VR e o apoio local em AR, que é a lacuna que o AeroEye procura explorar.
+
+O contributo esperado está na integração e avaliação de tecnologias existentes num cenário coerente, e não na introdução de uma nova técnica. Os benefícios do sistema ainda não foram demonstrados e dependem da validação em ambiente industrial simulado.
 
 \section*{AI Use Declaration}
 Os autores utilizaram o Gemini 3.8 Flash, ChatGPT 5.6 Luna e Claude 5.5 com o propósito de reescrita e formalização estilística de pequenas secções do texto originalmente redigido pelos autores. Todos os outputs foram cuidadosamente revistos, editados sempre que necessário e verificados quanto à precisão técnica e das referências. Os autores mantêm a inteira responsabilidade pelo conteúdo do trabalho submetido.\\
